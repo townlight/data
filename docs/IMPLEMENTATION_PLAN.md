@@ -1,4 +1,6 @@
-# CivicData Bridge Implementation Plan
+<a id="civicdata-bridge-implementation-plan"></a>
+
+# Townlight Data Implementation Plan
 
 ## v0.1.0 shipped
 
@@ -14,7 +16,7 @@
 ## Future work
 
 - Staff approval queues.
-- CivicCore connector imports.
-- CivicRecords exemption-engine integration.
+- Townlight Core connector imports.
+- Townlight Records exemption-engine integration.
 - CKAN handoff adapter after approval.
 - Export bundle signing and audit trails.

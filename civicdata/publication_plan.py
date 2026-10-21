@@ -1,4 +1,4 @@
-"""Scheduled publication planning for CivicData Bridge."""
+"""Scheduled publication planning for Townlight Data."""
 
 from dataclasses import dataclass
 

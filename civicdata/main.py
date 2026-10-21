@@ -1,4 +1,4 @@
-"""FastAPI runtime foundation for CivicData Bridge."""
+"""FastAPI runtime foundation for Townlight Data."""
 
 import os
 
@@ -25,9 +25,9 @@ from civicdata.redaction_review import review_fields_for_publication
 
 
 app = FastAPI(
-    title="CivicData Bridge",
+    title='Townlight Data',
     version=__version__,
-    description="Open-data normalization, CKAN package drafts, archive bundles, and redaction-review support for CivicSuite.",
+    description='Open-data normalization, CKAN package drafts, archive bundles, and redaction-review support for Townlight.',
 )
 
 _publication_repository: PublicationWorkpaperRepository | None = None
@@ -89,7 +89,7 @@ def root() -> dict[str, str]:
         "version": __version__,
         "status": "open-data foundation plus publication workpaper persistence",
         "message": (
-            "CivicData Bridge package, API foundation, dataset normalization, data-dictionary drafts, "
+            "Townlight Data package, API foundation, dataset normalization, data-dictionary drafts, "
             "CKAN package metadata drafts, PII/exemption review preflight, archive-bundle checklists, "
             "publication planning, optional database-backed CKAN package/publication-plan workpapers, and "
             "public UI foundation are online; live CKAN publishing, BI dashboards, data warehouse storage, "
@@ -166,7 +166,7 @@ def _require_publication_reader(
 ) -> AuthenticatedPrincipal:
     return authorize_bearer_roles(
         credentials,
-        service_name="CivicData Bridge",
+        service_name='Townlight Data',
         feature_name="persisted publication workpaper retrieval",
         token_roles_env_var="CIVICDATA_AUTH_TOKEN_ROLES",
         allowed_roles={"workpaper_reader", "data_admin"},
@@ -182,7 +182,7 @@ def get_ckan_package(
         raise HTTPException(
             status_code=503,
             detail={
-                "message": "CivicData persisted publication retrieval auth is not configured.",
+                "message": "Townlight Data persisted publication retrieval auth is not configured.",
                 "fix": (
                     "Set CIVICDATA_AUTH_TOKEN_ROLES before exposing persisted CKAN package retrieval."
                 ),
@@ -244,7 +244,7 @@ def get_publication_plan(
         raise HTTPException(
             status_code=503,
             detail={
-                "message": "CivicData publication workpaper persistence is not configured.",
+                "message": "Townlight Data publication workpaper persistence is not configured.",
                 "fix": "Set CIVICDATA_PUBLICATION_DB_URL to retrieve persisted publication plans.",
             },
         )

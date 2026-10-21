@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for helping improve CivicData Bridge. Keep contributions small, tested, documented, and honest about shipped versus planned behavior.
+Thank you for helping improve Townlight Data Bridge. Keep contributions small, tested, documented, and honest about shipped versus planned behavior.
 
 Before opening a PR, run:
 

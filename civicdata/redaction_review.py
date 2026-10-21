@@ -1,4 +1,4 @@
-"""PII and exemption review helpers for CivicData Bridge."""
+"""PII and exemption review helpers for Townlight Data."""
 
 from dataclasses import dataclass
 

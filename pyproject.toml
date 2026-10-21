@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "civicdata"
 version = "0.1.2"
-description = "CivicData Bridge foundation for open-data normalization, CKAN package drafts, archive bundles, and redaction review."
+description = "Townlight Data foundation for open-data normalization, CKAN package drafts, archive bundles, and redaction review."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "AGPL-3.0-only" }
