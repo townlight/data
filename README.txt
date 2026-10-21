@@ -22,4 +22,4 @@ Important routes:
   /api/v1/civicdata/publication-plan
   /api/v1/civicdata/publication-plan/{plan_id}
 
-License: Apache 2.0 code, CC BY 4.0 docs.
+License: Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See LICENSE and LICENSE-EXCEPTION.md. Documentation: CC BY 4.0 (LICENSE-DOCS).

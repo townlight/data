@@ -37,6 +37,6 @@ code{background:var(--mint);padding:.1rem .35rem;border-radius:.35rem}:focus-vis
     <article class="card"><h2>Dependency</h2><p>Pinned to <code>civiccore==0.4.0</code>. Retrieval auth uses <code>CIVICDATA_AUTH_TOKEN_ROLES</code>. CivicCore remains dependency-only; it never imports from CivicData.</p></article>
   </section>
 </main>
-<footer><p>Apache 2.0 code. CC BY 4.0 docs. Run locally by the city.</p></footer>
+<footer><p>AGPL-3.0 code. CC BY 4.0 docs. Run locally by the city.</p></footer>
 </body>
 </html>"""
