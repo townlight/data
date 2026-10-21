@@ -1,6 +1,8 @@
-# CivicData Bridge Agent Instructions
+<a id="civicdata-bridge-agent-instructions"></a>
 
-CivicData Bridge prepares municipal datasets for open-data review. Keep v0.1.1 honest: it drafts metadata and checklists, but it does not publish to CKAN, host dashboards, store a data warehouse, or make autonomous redaction/exemption decisions.
+# Townlight Data Agent Instructions
+
+Townlight Data prepares municipal datasets for open-data review. Keep v0.1.1 honest: it drafts metadata and checklists, but it does not publish to CKAN, host dashboards, store a data warehouse, or make autonomous redaction/exemption decisions.
 
 ## Required verification
 
@@ -16,7 +18,7 @@ bash scripts/verify-release.sh
 
 ## Dependency boundary
 
-CivicData Bridge may depend on `civiccore==0.3.0`. CivicCore must never import CivicData Bridge. Do not import from CivicCore placeholder packages.
+Townlight Data may depend on `civiccore==0.3.0`. Townlight Core must never import Townlight Data Bridge. Do not import from Townlight Core placeholder packages.
 
 ## UX and documentation
 

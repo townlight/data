@@ -1,6 +1,8 @@
-# CivicData Bridge
+<a id="civicdata-bridge"></a>
 
-CivicData Bridge is the CivicSuite open-data preparation module. Version 0.1.2 ships the local package, FastAPI runtime, deterministic helper functions, optional database-backed publication workpapers, bearer-token protection for persisted retrieval, tests, release gates, public documentation, and browser-verified sample UI for preparing municipal datasets before human-approved publication.
+# Townlight Data
+
+Townlight Data is the Townlight open-data preparation module. Version 0.1.2 ships the local package, FastAPI runtime, deterministic helper functions, optional database-backed publication workpapers, bearer-token protection for persisted retrieval, tests, release gates, public documentation, and browser-verified sample UI for preparing municipal datasets before human-approved publication.
 
 ## Shipping in v0.1.2
 
@@ -20,12 +22,12 @@ CivicData Bridge is the CivicSuite open-data preparation module. Version 0.1.2 s
 - BI dashboards or dashboard hosting.
 - Data warehouse storage or long-term operational data storage beyond archive-bundle planning.
 - Autonomous redaction or automatic exemption decisions.
-- External connector runtime, approval queues, or CivicRecords exemption-engine integration.
+- External connector runtime, approval queues, or Townlight Records exemption-engine integration.
 - Staff SSO and role-based publication approvals. v0.1.2 protects persisted retrieval only; broader workflow auth comes later.
 
 ## Install and run locally
 
-CivicData Bridge v0.1.2 is pinned to `civiccore==0.4.0`.
+Townlight Data v0.1.2 is pinned to `civiccore==0.4.0`.
 
 ```bash
 python -m venv .venv
@@ -36,7 +38,7 @@ python -m uvicorn civicdata.main:app --host 127.0.0.1 --port 8137
 
 Open `http://127.0.0.1:8137/civicdata` for the browser sample and `http://127.0.0.1:8137/docs` for FastAPI docs.
 
-Set `CIVICDATA_PUBLICATION_DB_URL` to persist CKAN package drafts and publication plans. Set `CIVICDATA_AUTH_TOKEN_ROLES` to a JSON token-to-role map before exposing persisted retrieval. Without the database variable, CivicData Bridge remains deterministic and stateless. Without the auth variable, persisted retrieval endpoints return actionable `503` guidance. With auth configured, anonymous callers receive `401` and callers without an allowed role receive `403`.
+Set `CIVICDATA_PUBLICATION_DB_URL` to persist CKAN package drafts and publication plans. Set `CIVICDATA_AUTH_TOKEN_ROLES` to a JSON token-to-role map before exposing persisted retrieval. Without the database variable, Townlight Data remains deterministic and stateless. Without the auth variable, persisted retrieval endpoints return actionable `503` guidance. With auth configured, anonymous callers receive `401` and callers without an allowed role receive `403`.
 
 ## API surface
 
@@ -64,4 +66,4 @@ bash scripts/verify-release.sh
 
 ## Licensing
 
-Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See [LICENSE](LICENSE) and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md). Documentation is CC BY 4.0 unless otherwise noted. CivicData Bridge is designed for local municipal operation and does not require outbound runtime calls in the default profile.
+Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See [LICENSE](LICENSE) and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md). Documentation is CC BY 4.0 unless otherwise noted. Townlight Data is designed for local municipal operation and does not require outbound runtime calls in the default profile.

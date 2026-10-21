@@ -1,4 +1,6 @@
-# CivicData Bridge Milestones
+<a id="civicdata-bridge-milestones"></a>
+
+# Townlight Data Milestones
 
 ## 0.1.0 Foundation
 
@@ -10,7 +12,7 @@ Add staff approval queues, audit trails, and role-aware review states.
 
 ## 0.3.x Connector Imports
 
-Use CivicCore connector patterns for controlled source-system imports.
+Use Townlight Core connector patterns for controlled source-system imports.
 
 ## 0.4.x CKAN Handoff
 

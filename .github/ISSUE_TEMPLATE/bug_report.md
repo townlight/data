@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a CivicData Bridge defect
+about: Report a Townlight Data defect
 title: "[Bug]: "
 labels: bug
 ---

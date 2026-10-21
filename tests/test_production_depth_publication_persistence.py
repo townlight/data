@@ -104,7 +104,7 @@ def test_get_ckan_package_without_auth_config_returns_actionable_503(monkeypatch
 
     assert response.status_code == 503
     detail = response.json()["detail"]
-    assert detail["message"] == "CivicData Bridge persisted publication workpaper retrieval auth is not configured."
+    assert detail["message"] == "Townlight Data persisted publication workpaper retrieval auth is not configured."
     assert "Set CIVICDATA_AUTH_TOKEN_ROLES" in detail["fix"]
 
 

@@ -1,8 +1,10 @@
-# CivicData Bridge User Manual
+<a id="civicdata-bridge-user-manual"></a>
+
+# Townlight Data User Manual
 
 ## Non-technical staff guide
 
-CivicData Bridge helps a city prepare datasets before they are published to an open-data portal. It is a preparation and review tool with optional saved CKAN package/publication-plan workpapers, not an automatic publishing robot.
+Townlight Data helps a city prepare datasets before they are published to an open-data portal. It is a preparation and review tool with optional saved CKAN package/publication-plan workpapers, not an automatic publishing robot.
 
 ### What staff can do today
 
@@ -20,7 +22,7 @@ Every dataset still needs staff approval before publication. Staff must confirm 
 
 ### What v0.1.2 does not do
 
-CivicData Bridge does not publish directly to CKAN, does not host dashboards, does not store a data warehouse, does not make legal exemption decisions, and does not redact records automatically.
+Townlight Data does not publish directly to CKAN, does not host dashboards, does not store a data warehouse, does not make legal exemption decisions, and does not redact records automatically.
 
 ## IT and technical guide
 
@@ -50,7 +52,7 @@ The public endpoints are listed in `README.md`. All v0.1.2 endpoints are determi
 
 ### Dependency contract
 
-CivicData Bridge depends on `civiccore==0.4.0`. CivicCore must not import CivicData Bridge.
+Townlight Data depends on `civiccore==0.4.0`. Townlight Core must not import Townlight Data Bridge.
 
 ### Verification
 

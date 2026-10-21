@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest a CivicData Bridge improvement
+about: Suggest a Townlight Data improvement
 title: "[Feature]: "
 labels: enhancement
 ---

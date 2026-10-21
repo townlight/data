@@ -31,7 +31,7 @@ def test_public_ui_contains_version_boundaries_and_dependency():
     response = client.get("/civicdata")
     assert response.status_code == 200
     text = response.text
-    assert "CivicData Bridge v0.1.2" in text
+    assert "Townlight Data v0.1.2" in text
     assert "No live CKAN publication" in text
     assert "civiccore==0.4.0" in text
 

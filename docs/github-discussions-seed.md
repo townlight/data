@@ -1,12 +1,14 @@
 # GitHub Discussions Seed Posts
 
-## Welcome to CivicData Bridge
+<a id="welcome-to-civicdata-bridge"></a>
 
-CivicData Bridge helps municipalities prepare datasets for open-data review: normalization, data dictionaries, CKAN package drafts, redaction preflight, archive checklists, and publication planning.
+## Welcome to Townlight Data
+
+Townlight Data helps municipalities prepare datasets for open-data review: normalization, data dictionaries, CKAN package drafts, redaction preflight, archive checklists, and publication planning.
 
 ## What should v0.2.0 prioritize?
 
-Should the next release focus first on approval queues, CivicCore connector imports, CivicRecords exemption-engine integration, or CKAN handoff adapters?
+Should the next release focus first on approval queues, Townlight Core connector imports, Townlight Records exemption-engine integration, or CKAN handoff adapters?
 
 ## Local deployment notes
 
