@@ -1,25 +1,65 @@
-Townlight Data v0.1.2
+  Parked foundation — outside the released Windows suite. This repository contains exploratory/support code, not a completed Townlight product. It is not installed or supported by Windows 1.8.1.1. Historical examples, package names and dependency pins below describe this foundation and must not be used as current suite installation instructions. Use the released Windows suite, current modules and acceptance limits.
 
-Townlight Data prepares municipal datasets for open-data review. It ships dataset normalization, data-dictionary drafts, CKAN package metadata drafts, optional database-backed CKAN package/publication-plan workpapers, bearer-token protection for persisted retrieval, PII/exemption preflight, archive-bundle checklists, publication planning, FastAPI endpoints, tests, docs, and browser QA evidence.
+Townlight Data
 
-It does not ship live CKAN publishing, BI dashboards, data warehouse storage, autonomous redaction, or external connector runtime.
+Townlight Data is the Townlight open-data preparation module. Version 0.1.2 ships the local package, FastAPI runtime, deterministic helper functions, optional database-backed publication workpapers, bearer-token protection for persisted retrieval, tests, release gates, public documentation, and browser-verified sample UI for preparing municipal datasets before human-approved publication.
 
-Run locally:
-  python -m pip install -e ".[dev]"
-  python -m uvicorn civicdata.main:app --host 127.0.0.1 --port 8137
+Shipping in v0.1.2
 
-Set CIVICDATA_PUBLICATION_DB_URL to persist CKAN package drafts and publication plans. Set CIVICDATA_AUTH_TOKEN_ROLES to a JSON token-to-role map before exposing persisted retrieval. Without the database variable, Townlight Data remains deterministic and stateless. Without the auth variable, persisted retrieval endpoints return actionable 503 guidance. With auth configured, anonymous callers receive 401 and unauthorized roles receive 403.
+- Dataset field normalization for CKAN-friendly names, date/time hints, and geospatial-review notes.
+- Data-dictionary draft generation from source schema metadata.
+- CKAN/open-data package metadata drafts with license and redaction blockers.
+- Optional SQLAlchemy-backed CKAN package and publication-plan workpaper records through CIVICDATA_PUBLICATION_DB_URL.
+- Bearer-token protection for persisted CKAN package and publication-plan retrieval through CIVICDATA_AUTH_TOKEN_ROLES.
+- PII/exemption preflight review that blocks readiness until staff review clears findings.
+- Records-retention archive bundle checklist support.
+- Scheduled publication planning checklists that require human approval.
+- FastAPI endpoints, health check, static public UI, and release verification scripts.
 
-Important routes:
-  /health
-  /civicdata
-  /api/v1/civicdata/normalize
-  /api/v1/civicdata/data-dictionary
-  /api/v1/civicdata/ckan-package
-  /api/v1/civicdata/ckan-package/{package_id}
-  /api/v1/civicdata/redaction-review
-  /api/v1/civicdata/archive-bundle
-  /api/v1/civicdata/publication-plan
-  /api/v1/civicdata/publication-plan/{plan_id}
+Not shipped yet
 
-License: Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See LICENSE and LICENSE-EXCEPTION.md. Documentation: CC BY 4.0 (LICENSE-DOCS).
+- Live CKAN publication or API writeback.
+- BI dashboards or dashboard hosting.
+- Data warehouse storage or long-term operational data storage beyond archive-bundle planning.
+- Autonomous redaction or automatic exemption decisions.
+- External connector runtime, approval queues, or Townlight Records exemption-engine integration.
+- Staff SSO and role-based publication approvals. v0.1.2 protects persisted retrieval only; broader workflow auth comes later.
+
+Install and run locally
+
+Townlight Data v0.1.2 is pinned to civiccore==0.4.0.
+
+    python -m venv .venv
+    . .venv/Scripts/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
+    python -m pip install -e ".[dev]"
+    python -m uvicorn civicdata.main:app --host 127.0.0.1 --port 8137
+
+Open http://127.0.0.1:8137/civicdata for the browser sample and http://127.0.0.1:8137/docs for FastAPI docs.
+
+Set CIVICDATA_PUBLICATION_DB_URL to persist CKAN package drafts and publication plans. Set CIVICDATA_AUTH_TOKEN_ROLES to a JSON token-to-role map before exposing persisted retrieval. Without the database variable, Townlight Data remains deterministic and stateless. Without the auth variable, persisted retrieval endpoints return actionable 503 guidance. With auth configured, anonymous callers receive 401 and callers without an allowed role receive 403.
+
+API surface
+
+- GET / reports current product state and boundaries.
+- GET /health reports civicdata and civiccore versions.
+- GET /civicdata renders the public sample page.
+- POST /api/v1/civicdata/normalize normalizes field metadata.
+- POST /api/v1/civicdata/data-dictionary drafts data-dictionary entries.
+- POST /api/v1/civicdata/ckan-package drafts CKAN package metadata.
+- GET /api/v1/civicdata/ckan-package/{package_id} retrieves a persisted CKAN package draft when both persistence and retrieval auth are configured.
+- POST /api/v1/civicdata/redaction-review flags PII/exemption review needs.
+- POST /api/v1/civicdata/archive-bundle prepares records-retention archive checklists.
+- POST /api/v1/civicdata/publication-plan prepares human-approved publication checklists.
+- GET /api/v1/civicdata/publication-plan/{plan_id} retrieves a persisted publication plan when both persistence and retrieval auth are configured.
+
+Verification
+
+    python -m pytest -q
+    bash scripts/verify-docs.sh
+    python scripts/check-civiccore-placeholder-imports.py
+    python -m ruff check .
+    bash scripts/verify-release.sh
+
+Licensing
+
+Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See LICENSE and LICENSE-EXCEPTION.md. Documentation is CC BY 4.0 unless otherwise noted. Townlight Data is designed for local municipal operation and does not require outbound runtime calls in the default profile.
