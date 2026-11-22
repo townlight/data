@@ -2,6 +2,10 @@ Townlight Data User Manual
 
 For staff: Townlight Data prepares municipal datasets for open-data review. It normalizes fields, drafts data dictionaries, prepares CKAN package metadata, flags possible PII/exempt fields, creates archive/publication checklists, and optionally retrieves saved CKAN package/publication-plan workpapers.
 
-Staff must approve every dataset before publication. v0.1.2 does not publish to CKAN, host dashboards, store a data warehouse, redact automatically, or make exemption decisions.
+Staff must approve every dataset before publication. v0.2.0 does not publish to CKAN, host dashboards, store a data warehouse, redact automatically, or make exemption decisions.
 
-For IT: install with python -m pip install -e ".[dev]" and run with python -m uvicorn civicdata.main:app --host 127.0.0.1 --port 8137. The package depends on civiccore==0.4.0 and runs locally. Set CIVICDATA_PUBLICATION_DB_URL to enable SQLAlchemy-backed CKAN package draft and publication-plan records. Set CIVICDATA_AUTH_TOKEN_ROLES to a JSON token-to-role map before exposing persisted retrieval. Leave the database variable unset for deterministic stateless operation.
+For IT: install with python -m pip install -e ".[dev]" and run with python -m uvicorn townlight_data.main:app --host 127.0.0.1 --port 8137. The package depends on townlight-core==1.3.0.dev2 and runs locally. Set CIVICDATA_PUBLICATION_DB_URL to enable SQLAlchemy-backed CKAN package draft and publication-plan records. Set CIVICDATA_AUTH_TOKEN_ROLES to a JSON token-to-role map before exposing persisted retrieval. Leave the database variable unset for deterministic stateless operation.
+
+Windows staff workflow
+
+In Townlight Data 0.2.0 candidate on Windows Suite full profile, existing Contracts grants let staff select signed agreements and preview only contract ID, title, vendor, start/expiration. An admin explicitly confirms the actual SHA-256 preview before an unattended queue sends to the configured resident Portal. Status states cover selection, hash confirmation, queueing, acknowledgement, correction, and withdrawal. No public link appears until the receiving portal acknowledges. Public outputs include CSV, JSON, and dictionary. Corrections proceed through a new review; withdrawal removes anonymous downloads when delivered. Legacy standalone workpaper APIs remain separate.

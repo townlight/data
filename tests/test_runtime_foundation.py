@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
 
-from civicdata import __version__
-from civicdata.main import app
+from townlight_data import __version__
+from townlight_data.main import app
 
 client = TestClient(app)
 
@@ -23,17 +23,17 @@ def test_health_reports_civiccore_pin():
     assert response.status_code == 200
     payload = response.json()
     assert payload["service"] == "civicdata"
-    assert payload["version"] == "0.1.2"
-    assert payload["civiccore_version"] == "0.4.0"
+    assert payload["version"] == "0.2.0"
+    assert payload["civiccore_version"] == "1.3.0.dev2"
 
 
 def test_public_ui_contains_version_boundaries_and_dependency():
     response = client.get("/civicdata")
     assert response.status_code == 200
     text = response.text
-    assert "Townlight Data v0.1.2" in text
+    assert "Townlight Data v0.2.0" in text
     assert "No live CKAN publication" in text
-    assert "civiccore==0.4.0" in text
+    assert "townlight-core==1.3.0.dev2" in text
 
 
 def test_api_endpoints_return_deterministic_payloads():

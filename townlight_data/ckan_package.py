@@ -2,8 +2,8 @@
 
 from dataclasses import dataclass
 
-from civicdata.data_dictionary import DictionaryEntry, draft_data_dictionary
-from civicdata.redaction_review import RedactionReview, review_fields_for_publication
+from townlight_data.data_dictionary import DictionaryEntry, draft_data_dictionary
+from townlight_data.redaction_review import RedactionReview, review_fields_for_publication
 
 
 @dataclass(frozen=True)

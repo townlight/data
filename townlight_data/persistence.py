@@ -7,8 +7,8 @@ from uuid import uuid4
 import sqlalchemy as sa
 from sqlalchemy import Engine, create_engine
 
-from civicdata.ckan_package import build_ckan_package_draft
-from civicdata.publication_plan import draft_publication_plan
+from townlight_data.ckan_package import build_ckan_package_draft
+from townlight_data.publication_plan import draft_publication_plan
 
 
 metadata = sa.MetaData()

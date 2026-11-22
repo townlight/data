@@ -14,7 +14,7 @@ PLACEHOLDERS = (
     "search",
     "verification",
 )
-SOURCE_ROOT = Path("civicdata")
+SOURCE_ROOT = Path("townlight_data")
 pattern = re.compile(r"^\s*(?:from|import)\s+civiccore\.(" + "|".join(PLACEHOLDERS) + r")\b")
 violations: list[str] = []
 for path in SOURCE_ROOT.rglob("*.py"):

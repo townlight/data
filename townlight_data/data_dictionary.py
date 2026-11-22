@@ -2,7 +2,7 @@
 
 from dataclasses import dataclass
 
-from civicdata.dataset_normalization import normalize_schema_fields
+from townlight_data.dataset_normalization import normalize_schema_fields
 
 
 @dataclass(frozen=True)
