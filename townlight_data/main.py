@@ -2,26 +2,26 @@
 
 import os
 
-from civiccore import __version__ as CIVICCORE_VERSION
-from civiccore.auth import AuthenticatedPrincipal, authorize_bearer_roles
+from townlight_core import __version__ as CIVICCORE_VERSION
+from townlight_core.auth import AuthenticatedPrincipal, authorize_bearer_roles
 from fastapi import Depends, FastAPI, HTTPException, Response
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
-from civicdata import __version__
-from civicdata.archive_bundle import create_archive_bundle_plan
-from civicdata.ckan_package import build_ckan_package_draft
-from civicdata.data_dictionary import draft_data_dictionary
-from civicdata.dataset_normalization import normalize_schema_fields
-from civicdata.persistence import (
+from townlight_data import __version__
+from townlight_data.archive_bundle import create_archive_bundle_plan
+from townlight_data.ckan_package import build_ckan_package_draft
+from townlight_data.data_dictionary import draft_data_dictionary
+from townlight_data.dataset_normalization import normalize_schema_fields
+from townlight_data.persistence import (
     PublicationWorkpaperRepository,
     StoredCKANPackage,
     StoredPublicationPlan,
 )
-from civicdata.public_ui import render_public_lookup_page
-from civicdata.publication_plan import draft_publication_plan
-from civicdata.redaction_review import review_fields_for_publication
+from townlight_data.public_ui import render_public_lookup_page
+from townlight_data.publication_plan import draft_publication_plan
+from townlight_data.redaction_review import review_fields_for_publication
 
 
 app = FastAPI(

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "VERIFY-RELEASE: CivicData Bridge v0.1.2"
+echo "VERIFY-RELEASE: Townlight Data v0.2.0"
 
 PYTHON_CANDIDATES=()
 if [[ -n "${CIVICDATA_RELEASE_PYTHON:-}" ]]; then
@@ -29,13 +29,13 @@ echo "[INFO] python: $PYTHON_BIN"
 bash scripts/verify-docs.sh
 "$PYTHON_BIN" scripts/check-civiccore-placeholder-imports.py
 "$PYTHON_BIN" -m pytest -q
-"$PYTHON_BIN" -m ruff check .
+"$PYTHON_BIN" -m ruff check townlight_data scripts tests
 rm -rf dist
 "$PYTHON_BIN" -m build
 "$PYTHON_BIN" - <<'PY'
 from pathlib import Path
 import hashlib
-expected = {"civicdata-0.1.2-py3-none-any.whl", "civicdata-0.1.2.tar.gz"}
+expected = {"townlight_data-0.2.0-py3-none-any.whl", "townlight_data-0.2.0.tar.gz"}
 dist = Path("dist")
 found = {p.name for p in dist.iterdir() if p.is_file()}
 missing = expected - found
@@ -49,9 +49,9 @@ for name in sorted(expected):
 print("[PASS] build artifacts and SHA256SUMS")
 PY
 "$PYTHON_BIN" - <<'PY'
-import civicdata
-assert civicdata.__version__ == "0.1.2"
-print("[PASS] package version 0.1.2")
+import townlight_data
+assert townlight_data.__version__ == "0.2.0"
+print("[PASS] package version 0.2.0")
 PY
 
 echo "VERIFY-RELEASE: PASSED"

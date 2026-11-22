@@ -1,14 +1,14 @@
-from civicdata import __version__
-from civicdata.archive_bundle import create_archive_bundle_plan
-from civicdata.ckan_package import build_ckan_package_draft
-from civicdata.data_dictionary import draft_data_dictionary
-from civicdata.dataset_normalization import normalize_field_name, normalize_schema_fields
-from civicdata.publication_plan import draft_publication_plan
-from civicdata.redaction_review import review_fields_for_publication
+from townlight_data import __version__
+from townlight_data.archive_bundle import create_archive_bundle_plan
+from townlight_data.ckan_package import build_ckan_package_draft
+from townlight_data.data_dictionary import draft_data_dictionary
+from townlight_data.dataset_normalization import normalize_field_name, normalize_schema_fields
+from townlight_data.publication_plan import draft_publication_plan
+from townlight_data.redaction_review import review_fields_for_publication
 
 
 def test_version_is_release_version():
-    assert __version__ == "0.1.2"
+    assert __version__ == "0.2.0"
 
 
 def test_normalize_field_names_and_notes_dates_geospatial_fields():

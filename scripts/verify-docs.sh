@@ -45,8 +45,8 @@ for file in "${current_files[@]}"; do
   done
 done
 
-if ! grep -Fq "civiccore==0.4.0" README.md; then
-  echo "VERIFY-DOCS: FAILED README.md must mention civiccore==0.4.0"
+if ! grep -Fq "townlight-core==1.3.0.dev2" README.md; then
+  echo "VERIFY-DOCS: FAILED README.md must mention townlight-core==1.3.0.dev2"
   exit 1
 fi
 if ! grep -Fq "No live CKAN publication" docs/index.html; then

@@ -1,10 +1,10 @@
-  Parked foundation — outside the released Windows suite. This repository contains exploratory/support code, not a completed Townlight product. It is not installed or supported by Windows 1.8.1.1. Historical examples, package names and dependency pins below describe this foundation and must not be used as current suite installation instructions. Use the released Windows suite, current modules and acceptance limits.
+Townlight Data 0.2.0 targets the next Windows candidate. Windows 1.9.2.1 does not include Data.
 
 Townlight Data
 
-Townlight Data is the Townlight open-data preparation module. Version 0.1.2 ships the local package, FastAPI runtime, deterministic helper functions, optional database-backed publication workpapers, bearer-token protection for persisted retrieval, tests, release gates, public documentation, and browser-verified sample UI for preparing municipal datasets before human-approved publication.
+Townlight Data is the Townlight open-data preparation module. Version 0.2.0 ships the local package, FastAPI runtime, deterministic helper functions, optional database-backed publication workpapers, bearer-token protection for persisted retrieval, tests, release gates, public documentation, and browser-verified sample UI for preparing municipal datasets before human-approved publication.
 
-Shipping in v0.1.2
+Shipping in v0.2.0
 
 - Dataset field normalization for CKAN-friendly names, date/time hints, and geospatial-review notes.
 - Data-dictionary draft generation from source schema metadata.
@@ -23,16 +23,16 @@ Not shipped yet
 - Data warehouse storage or long-term operational data storage beyond archive-bundle planning.
 - Autonomous redaction or automatic exemption decisions.
 - External connector runtime, approval queues, or Townlight Records exemption-engine integration.
-- Staff SSO and role-based publication approvals. v0.1.2 protects persisted retrieval only; broader workflow auth comes later.
+- Staff SSO and role-based publication approvals. v0.2.0 protects persisted retrieval only; broader workflow auth comes later.
 
 Install and run locally
 
-Townlight Data v0.1.2 is pinned to civiccore==0.4.0.
+Townlight Data v0.2.0 is pinned to townlight-core==1.3.0.dev2.
 
     python -m venv .venv
     . .venv/Scripts/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
     python -m pip install -e ".[dev]"
-    python -m uvicorn civicdata.main:app --host 127.0.0.1 --port 8137
+    python -m uvicorn townlight_data.main:app --host 127.0.0.1 --port 8137
 
 Open http://127.0.0.1:8137/civicdata for the browser sample and http://127.0.0.1:8137/docs for FastAPI docs.
 
@@ -63,3 +63,7 @@ Verification
 Licensing
 
 Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See LICENSE and LICENSE-EXCEPTION.md. Documentation is CC BY 4.0 unless otherwise noted. Townlight Data is designed for local municipal operation and does not require outbound runtime calls in the default profile.
+
+Windows staff workflow
+
+In Townlight Data 0.2.0 candidate on Windows Suite full profile, existing Contracts grants let staff select signed agreements and preview only contract ID, title, vendor, start/expiration. An admin explicitly confirms the actual SHA-256 preview before an unattended queue sends to the configured resident Portal. Status states cover selection, hash confirmation, queueing, acknowledgement, correction, and withdrawal. No public link appears until the receiving portal acknowledges. Public outputs include CSV, JSON, and dictionary. Corrections proceed through a new review; withdrawal removes anonymous downloads when delivered. Legacy standalone workpaper APIs remain separate.
