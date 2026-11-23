@@ -1,4 +1,4 @@
-> Townlight Data 0.2.0 targets the next Windows candidate. Windows 1.9.2.1 does not include Data.
+> Townlight Data 0.2.0 is packaged with Windows beta 1.9.3.1. Windows 1.9.2.1 does not include Data. See the [GitHub release](https://github.com/townlight/townlight/releases/tag/townlight-windows-v1.9.3.1).
 
 <a id="civicdata-bridge"></a>
 
