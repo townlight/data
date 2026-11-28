@@ -1,10 +1,10 @@
-Windows 1.9.3.2 current release
+Windows 1.10.0.1 current release
 
-Townlight for Windows 1.9.3.2 is the current signed public beta. See the release notes and acceptance record.
+Townlight for Windows 1.10.0.1 is the current signed public beta. See the release notes and acceptance record.
 
-Townlight Windows 1.9.3.2 is a signed Suite package; Data, Budget, and Grants were first bundled in Windows 1.9.3.1 and remain in the current signed 1.9.3.2 Windows beta.
+Townlight Windows 1.10.0.1 is a signed Suite package; Data, Budget, and Grants were first bundled in Windows 1.9.3.1 and remain in the current signed 1.10.0.1 Windows beta.
 
-  Townlight Data 0.2.0 is packaged with Windows beta 1.9.3.2. Windows 1.9.2.1 does not include Data. See the GitHub release.
+  Townlight Data 0.2.0 is packaged with Windows beta 1.10.0.1. Windows 1.9.2.1 does not include Data. See the GitHub release.
 
 Townlight Data
 
@@ -12,7 +12,7 @@ Townlight Data is the Townlight open-data preparation module. Version 0.2.0 ship
 
 Windows staff workflow
 
-In Townlight Data 0.2.0, included in Townlight Windows beta 1.9.3.2, existing Contracts grants let staff select signed agreements and preview only contract ID, title, vendor, start/expiration. An admin explicitly confirms the actual SHA-256 preview before an unattended queue sends to the configured resident Portal. Status states cover selection, hash confirmation, queueing, acknowledgement, correction, and withdrawal. No public link appears until the receiving portal acknowledges. Public outputs include CSV, JSON, and dictionary. Corrections proceed through a new review; withdrawal removes anonymous downloads when delivered. Legacy standalone workpaper APIs remain separate.
+In Townlight Data 0.2.0, included in Townlight Windows beta 1.10.0.1, existing Contracts grants let staff select signed agreements and preview only contract ID, title, vendor, start/expiration. An admin explicitly confirms the actual SHA-256 preview before an unattended queue sends to the configured resident Portal. Status states cover selection, hash confirmation, queueing, acknowledgement, correction, and withdrawal. No public link appears until the receiving portal acknowledges. Public outputs include CSV, JSON, and dictionary. Corrections proceed through a new review; withdrawal removes anonymous downloads when delivered. Legacy standalone workpaper APIs remain separate.
 
 Standalone workpapers
 
